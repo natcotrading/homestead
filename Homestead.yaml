@@ -1,0 +1,52 @@
+---
+name: insider-homestead
+ip: "192.168.10.10"
+memory: 4096
+cpus: 4
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: code
+      to: /home/vagrant/code
+      type: "nfs"
+
+sites:
+    - map: server.atlas.test
+      to: /home/vagrant/code/atlas/public
+    - map: api.boatline.test
+      to: /home/vagrant/code/atlas/public
+    - map: admin.boatline.test
+      to: /home/vagrant/code/atlas/public
+    - map: api.rockanddirt.test
+      to: /home/vagrant/code/atlas/public
+    - map: admin.rockanddirt.test
+      to: /home/vagrant/code/atlas/public
+    - map: api.nexttruck.test
+      to: /home/vagrant/code/atlas/public
+    - map: admin.nexttruck.test
+      to: /home/vagrant/code/atlas/public
+    - map: api.insider.test
+      to: /home/vagrant/code/insiderapi/public
+      php: "5.6"
+
+databases:
+    - tenancy
+    - insider
+
+features:
+    - mariadb: false
+    - ohmyzsh: false
+    - webdriver: false
+    - mysql8: true
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp

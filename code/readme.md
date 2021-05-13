@@ -1,0 +1,1 @@
+## Place your atlas and/or insiderapi repositories inside this folder.
