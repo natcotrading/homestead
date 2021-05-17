@@ -12,5 +12,3 @@ phpunit.xml
 .phpunit.result.cache
 wsl-init.log
 .backup/*
-/code/insiderapi
-/code/atlas

@@ -1,5 +1,5 @@
 ---
-name: insider-homestead
+name: natco-homestead
 ip: "192.168.10.10"
 memory: 4096
 cpus: 4
@@ -18,21 +18,32 @@ folders:
 sites:
     - map: server.atlas.test
       to: /home/vagrant/code/atlas/public
+      php: "8.0"
     - map: api.boatline.test
       to: /home/vagrant/code/atlas/public
+      php: "8.0"
     - map: admin.boatline.test
       to: /home/vagrant/code/atlas/public
+      php: "8.0"
     - map: api.rockanddirt.test
       to: /home/vagrant/code/atlas/public
+      php: "8.0"
     - map: admin.rockanddirt.test
       to: /home/vagrant/code/atlas/public
+      php: "8.0"
     - map: api.nexttruck.test
       to: /home/vagrant/code/atlas/public
+      php: "8.0"
     - map: admin.nexttruck.test
       to: /home/vagrant/code/atlas/public
+      php: "8.0"
     - map: api.insider.test
       to: /home/vagrant/code/insiderapi/public
-      php: "5.6"
+      php: "7.2"
+    - map: rvinsider.test
+      to: /home/vagrant/code/rvinsider
+      php: "7.2"
+      type: "apache"
 
 databases:
     - tenancy
@@ -42,7 +53,7 @@ features:
     - mariadb: false
     - ohmyzsh: false
     - webdriver: false
-    - mysql8: true
+    # - mysql8: true
 
 # ports:
 #     - send: 50000
