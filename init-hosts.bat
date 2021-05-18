@@ -36,10 +36,10 @@ FIND /C /I "api.tradequip.test" %WINDIR%\system32\drivers\etc\hosts
 IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^192.168.10.10  api.tradequip.test>>%WINDIR%\System32\drivers\etc\hosts
 
 FIND /C /I "api.insider.test" %WINDIR%\system32\drivers\etc\hosts
-IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^192.168.10.10  api.insider.test>>%WINDIR%\System32\drivers\etc\hosts
+IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^192.168.10.11  api.insider.test>>%WINDIR%\System32\drivers\etc\hosts
 
 FIND /C /I "rvinsider.test" %WINDIR%\system32\drivers\etc\hosts
-IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^192.168.10.10  rvinsider.test>>%WINDIR%\System32\drivers\etc\hosts
+IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^192.168.10.11  rvinsider.test>>%WINDIR%\System32\drivers\etc\hosts
 
 @echo on
 

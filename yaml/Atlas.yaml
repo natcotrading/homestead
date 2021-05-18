@@ -1,0 +1,55 @@
+---
+name: atlas-homestead
+ip: "192.168.10.10"
+memory: 4096
+cpus: 4
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: code
+      to: /home/vagrant/code
+      type: "nfs"
+
+sites:
+    - map: server.atlas.test
+      to: /home/vagrant/code/atlas/public
+      php: "8.0"
+    - map: api.boatline.test
+      to: /home/vagrant/code/atlas/public
+      php: "8.0"
+    - map: admin.boatline.test
+      to: /home/vagrant/code/atlas/public
+      php: "8.0"
+    - map: api.rockanddirt.test
+      to: /home/vagrant/code/atlas/public
+      php: "8.0"
+    - map: admin.rockanddirt.test
+      to: /home/vagrant/code/atlas/public
+      php: "8.0"
+    - map: api.nexttruck.test
+      to: /home/vagrant/code/atlas/public
+      php: "8.0"
+    - map: admin.nexttruck.test
+      to: /home/vagrant/code/atlas/public
+      php: "8.0"
+
+databases:
+    - tenancy
+
+features:
+    - mariadb: false
+    - ohmyzsh: false
+    - webdriver: false
+    # - mysql8: true
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp

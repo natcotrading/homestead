@@ -1,8 +1,7 @@
 @echo off
 
-:: BatchGotAdmin
-:-------------------------------------
-REM  --> Check for permissions
+
+
     IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
 >nul 2>&1 "%SYSTEMROOT%\SysWOW64\cacls.exe" "%SYSTEMROOT%\SysWOW64\config\system"
 ) ELSE (
@@ -29,15 +28,23 @@ if '%errorlevel%' NEQ '0' (
     CD /D "%~dp0"
 
 
-if ["%~1"]==["json"] (
-    copy /-y resources\Homestead.json Homestead.json
+set /p env= "Homestead environment to configure (insider/atlas): "
+
+if "%env%" == "atlas" (
+    copy /-y yaml\Atlas.yaml Homestead.yaml
 )
-if ["%~1"]==[""] (
-    copy /-y resources\Homestead.yaml Homestead.yaml
+
+if "%env%" == "insider" (
+    copy /-y yaml\Insider.yaml Homestead.yaml
 )
+
+echo %env%
+
 
 copy /-y resources\after.sh after.sh
 copy /-y resources\aliases aliases
+
+
 
 call "init-hosts.bat"
 
