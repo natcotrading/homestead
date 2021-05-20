@@ -24,6 +24,10 @@ sites:
       to: /home/vagrant/code/rvinsider
       php: "7.2"
       type: "apache"
+    - map: cycleinsider.test
+      to: /home/vagrant/code/cycleinsider
+      php: "7.2"
+      type: "apache"
 
 databases:
     - insider

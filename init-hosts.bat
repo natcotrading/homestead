@@ -41,6 +41,9 @@ IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^192.168.10.11  api.insider.test>>%WINDIR%\S
 FIND /C /I "rvinsider.test" %WINDIR%\system32\drivers\etc\hosts
 IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^192.168.10.11  rvinsider.test>>%WINDIR%\System32\drivers\etc\hosts
 
+FIND /C /I "cycleinsider.test" %WINDIR%\system32\drivers\etc\hosts
+IF %ERRORLEVEL% NEQ 0 ECHO %NEWLINE%^192.168.10.11  cycleinsider.test>>%WINDIR%\System32\drivers\etc\hosts
+
 @echo on
 
 echo Hosts initialized!
